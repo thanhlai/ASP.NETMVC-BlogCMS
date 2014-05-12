@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index title";
+    //ViewBag is dynamic, can be anything after instead of "Tile"
+}
+<!-- HOME --> 
+<!-- This view is executed before the _Layout.cshtml -->
+<h1>Posts Index</h1>
+        @{
+            if (true)
+            {
+                <text>
+                    The "text" tag is important
+                    <p>C# code "if statement"</p>
+                    <p>Don't have to re-compile because it automatically updated by the server</p>
+                </text>
+            }
+        }
+    <p>
+        <a href="@Url.RouteUrl("login")">Click here to login</a>
+    </p>
+    <p>
+        @Html.RouteLink("Click here","login") to login
+    </p>

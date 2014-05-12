@@ -8,9 +8,9 @@ namespace SimpleBlog.Controllers
 {
     public class AuthController : Controller
     {
-        public ActionResult Login()
+        public ActionResult Login() //name of the razor file cshtml
         {
-            return Content("Login page");
+            return View();
         }
 	}
 }

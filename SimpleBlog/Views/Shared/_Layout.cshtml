@@ -1,0 +1,27 @@
+﻿@{
+    Layout = null;
+    //top layout, no parent layout
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Simple Blog</title>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="@Url.RouteUrl("home")">SIMPLE BLOG</a>
+        </h1>
+        <a href="@Url.RouteUrl("login")">LOGIN</a>
+    </header>
+    <!-- INSERT VIEW HERE -->
+    @RenderBody()
+    <footer>
+        &copy; @DateTime.UtcNow.Year - Thanh Lai
+    </footer>
+    @RenderSection("Scripts", false)
+</body>
+</html>

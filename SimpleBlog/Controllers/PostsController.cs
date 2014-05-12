@@ -7,9 +7,9 @@ namespace SimpleBlog.Controllers
 {
     public class PostsController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index() //name of the razor file cshtml
         {
-            return Content("Hello World!");
+            return View();
         }
     }
 }
