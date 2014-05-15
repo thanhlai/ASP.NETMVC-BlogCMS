@@ -1,11 +1,22 @@
-﻿@{
+﻿@model SimpleBlog.ViewModels.AuthLogin
+@{
     ViewBag.Title = "Login title";
 }
 <!-- This view is executed before the _Layout.cshtml -->
-<p>Login page Razer</p>
-@section Scripts
+@using (Html.BeginForm())
 {
-    <script>
-        alert("After footer Scripts section");
-    </script>
+    @Html.ValidationSummary()
+    <div>
+        @Html.LabelFor(x => x.Username)
+        @Html.EditorFor(x => x.Username)
+    </div>
+    
+    <div>
+        @Html.LabelFor(x=>x.Password)
+        @Html.EditorFor(x=>x.Password)
+    </div>
+    
+    <div>
+        <input type="submit" value="Login"/>
+    </div>
 }
