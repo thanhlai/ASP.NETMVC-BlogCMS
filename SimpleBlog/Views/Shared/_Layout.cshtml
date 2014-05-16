@@ -15,7 +15,19 @@
         <h1>
             <a href="@Url.RouteUrl("home")">SIMPLE BLOG</a>
         </h1>
-        <a href="@Url.RouteUrl("login")">LOGIN</a>
+        @if(User.Identity.IsAuthenticated)
+        {
+            <p>Welcome back, @User.Identity.Name</p>
+            <a href="@Url.RouteUrl("logout")">LOGOUT</a>
+            if (User.IsInRole("admin"))
+            {
+                <a href="@Url.Action("index","Posts", new {area = "admin"})">View posts as admin</a>
+            }
+        }
+        else
+        {
+            <a href="@Url.RouteUrl("login")">LOGIN</a>           
+        }
     </header>
     <!-- INSERT VIEW HERE -->
     @RenderBody()
