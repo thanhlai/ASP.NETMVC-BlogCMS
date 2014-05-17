@@ -7,7 +7,7 @@ namespace SimpleBlog.App_Start
         {
             bundles.Add(new StyleBundle("~/admin/styles")
                 .Include("~/content/styles/bootstrap.css")
-                .Include("~/content/style/admin.css"));
+                .Include("~/content/styles/admin.css"));
 
             bundles.Add(new StyleBundle("~/styles")
                 .Include("~/content/styles/bootstrap.css")
