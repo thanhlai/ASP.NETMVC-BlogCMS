@@ -16,7 +16,7 @@ namespace SimpleBlog.Migrations
                 .WithColumn("id").AsInt32().Identity().PrimaryKey()
                 .WithColumn("username").AsString(128)
                 .WithColumn("email").AsCustom("VARCHAR(256)")
-                .WithColumn("password").AsString(128);
+                .WithColumn("password_hash").AsString(256);
 
             Create.Table("roles")
                 .WithColumn("id").AsInt32().Identity().PrimaryKey()
