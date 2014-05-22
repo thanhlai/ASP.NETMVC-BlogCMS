@@ -20,5 +20,30 @@ namespace SimpleBlog.Areas.Admin.Controllers
                 Users = Database.Session.Query<User>().ToList()
             });
         }
+        public ActionResult New()
+        {
+            return View(new UsersNew
+            {
+
+            });
+        }
+        [HttpPost]
+        public ActionResult New(UsersNew form)
+        {
+            if (Database.Session.Query<User>().Any(f => f.Username == form.Username))
+                ModelState.AddModelError("Username", "Username already exists");
+
+            if (!ModelState.IsValid)
+                return View(form);
+
+            var user = new User
+            {
+                Email = form.Email,
+                Username = form.Username
+            };
+
+            user.SetPassword(form.Password);
+            return RedirectToAction("index");
+        }
 	}
 }
