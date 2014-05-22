@@ -8,6 +8,11 @@ namespace SimpleBlog.Infastructure
 {
     public class TransactionFilter : IActionFilter
     {
+        public void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            Database.Session.BeginTransaction();
+        }
+
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
             if (filterContext.Exception == null)
@@ -16,9 +21,5 @@ namespace SimpleBlog.Infastructure
                 Database.Session.Transaction.Rollback();
         }
 
-        public void OnActionExecuting(ActionExecutingContext filterContext)
-        {
-            Database.Session.BeginTransaction();
-        }
     }
 }
