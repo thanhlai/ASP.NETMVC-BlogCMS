@@ -2,6 +2,7 @@
 <h1>New User</h1>
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary()
     <div class="form-group">
         @Html.LabelFor(f => f.Username)
