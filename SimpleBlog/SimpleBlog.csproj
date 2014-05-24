@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Content Include="Areas\Admin\Scripts\PostEditor.js" />
     <Compile Include="Areas\Admin\ViewModels\Posts.cs" />
     <Compile Include="Areas\Admin\ViewModels\Users.cs" />
     <Compile Include="Auth.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Infastructure\PagedData.cs" />
     <Compile Include="Infastructure\RoleProvider.cs" />
     <Compile Include="Infastructure\SelectedTabAttribute.cs" />
