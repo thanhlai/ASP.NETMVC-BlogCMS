@@ -191,6 +191,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\Users\ResetPassword.cshtml" />
     <Content Include="Areas\Admin\Views\Users\_RoleEditor.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Form.cshtml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
