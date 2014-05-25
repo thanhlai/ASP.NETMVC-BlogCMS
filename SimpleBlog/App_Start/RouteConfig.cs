@@ -12,9 +12,17 @@ namespace SimpleBlog
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            var namespaces = new[] { typeof(PostsController).Namespace };
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            var namespaces = new[] { typeof(PostsController).Namespace };
+            routes.MapRoute("MyCustomTagRoute", "tag/{idAndSlug}", new { controller = "Posts", action = "Tag" }, namespaces);
+            routes.MapRoute("Tag", "tag/{id}-{slug}", new { controller = "Posts", action = "Tag" }, namespaces);
+
+            routes.MapRoute("MyCustomPostRoute", "post/{idAndSlug}", new { controller = "Posts", action = "Show" }, namespaces);
+            routes.MapRoute("Post", "post/{id}-{slug}", new { controller = "Posts", action = "Show" }, namespaces);
+
+           
 
             //learn how to write my own route
             //name of the route
