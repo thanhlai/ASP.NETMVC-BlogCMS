@@ -3,42 +3,43 @@
     Layout = null;
     //top layout, no parent layout
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title - Simple Blog</title>
     @Styles.Render("~/styles")
 </head>
 <body>
-    <header>
-        <h1>
-            <a href="@Url.RouteUrl("home")">SIMPLE BLOG</a>
-            <i class="glyphicon glyphicon-bell"></i>
-        </h1>
-        @if(User.Identity.IsAuthenticated)
-        {
-            <p>Welcome back, @User.Identity.Name</p>
-            <a href="@Url.RouteUrl("logout")">LOGOUT</a>
-            if (User.IsInRole("admin"))
-            {
-                <a href="@Url.Action("index","Posts", new {area = "admin"})">View posts as admin</a>
-            }
-        }
-        else
-        {
-            <a href="@Url.RouteUrl("login")">LOGIN</a>           
-        }
-    </header>
-    <!-- INSERT VIEW HERE -->
-    @RenderBody()
-    <footer>
-        &copy; @DateTime.UtcNow.Year - Thanh Lai
-    </footer>
+    <div class="site-header">
+        <header class="container">
+            <h1 class="page-header">
+                <a href="@Url.RouteUrl("Home")">Awesome Title</a>
+                <small>a simple blog powered by ASP.NET MVC</small>
+            </h1>
+        </header>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                @RenderBody()
+            </div>
+            <div class="col-lg-4 sidebar">
+                @Html.Action("Sidebar", "Layout")
+            </div>
+        </div>
+
+        <footer>
+            &copy; @DateTime.Now.Year - Thanh Lai
+        </footer>
+    </div>
+
+
+
     @Scripts.Render("~/scripts")
     @RenderSection("Scripts", false)
-
 </body>
 </html>

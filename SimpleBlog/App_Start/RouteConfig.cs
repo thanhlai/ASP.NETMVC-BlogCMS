@@ -30,6 +30,8 @@ namespace SimpleBlog
             //controller is like class, action is like method
             routes.MapRoute("Login", "login", new { controller = "Auth", action = "Login" }, namespaces);
             routes.MapRoute("Logout", "logout", new { controller = "Auth", action = "Logout" }, namespaces);
+
+            routes.MapRoute("Sidebar", "", new { controller = "Layout", action = "Sidebar" }, namespaces);
         }
     }
 }
