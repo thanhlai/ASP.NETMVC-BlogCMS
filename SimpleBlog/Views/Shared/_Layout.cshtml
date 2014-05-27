@@ -9,15 +9,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title - Simple Blog</title>
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/ico" href="~/Content/favicon.ico" />
     @Styles.Render("~/styles")
 </head>
 <body>
     <div class="site-header">
         <header class="container">
             <h1 class="page-header">
-                <a href="@Url.RouteUrl("Home")">Awesome Title</a>
-                <small>a simple blog powered by ASP.NET MVC</small>
+                <a href="@Url.RouteUrl("Home")">Web Apps</a>
+                <small>a simple web-blog powered by ASP.NET MVC</small>
             </h1>
         </header>
     </div>
@@ -33,13 +34,12 @@
         </div>
 
         <footer>
-            &copy; @DateTime.Now.Year - Thanh Lai
+            &copy; @DateTime.Now.Year - Thanh Lai. All rights reserved
         </footer>
     </div>
 
-
-
-    @Scripts.Render("~/scripts")
+    @Scripts.Render("~/myscripts")
     @RenderSection("Scripts", false)
+
 </body>
 </html>

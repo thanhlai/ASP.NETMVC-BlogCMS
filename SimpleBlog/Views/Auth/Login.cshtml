@@ -1,20 +1,20 @@
 ﻿@model SimpleBlog.ViewModels.AuthLogin
 @{
-    ViewBag.Title = "Login title";
+    ViewBag.Title = "Login";
 }
 <!-- This view is executed before the _Layout.cshtml -->
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary()
     <div>
-        @Html.LabelFor(x => x.Username)
+        @Html.LabelFor(x => x.Username):
         @Html.EditorFor(x => x.Username)
     </div>
     <div>
-        @Html.LabelFor(x=>x.Password)
-        @Html.EditorFor(x=>x.Password)
+        @Html.LabelFor(x => x.Password):
+        @Html.EditorFor(x => x.Password)
     </div>
     <div>
-        <input type="submit" value="Login"/>
+        <input type="submit" class="btn btn-sm btn-primary" value="Login" />
     </div>
 }
