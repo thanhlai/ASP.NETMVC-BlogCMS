@@ -29,7 +29,9 @@ namespace SimpleBlog.App_Start
                 .Include("~/scripts/jquery.validate.unobtrusive.js")
                 .Include("~/scripts/bootstrap.js")
                 .Include("~/scripts/jquery.timeago.js")
-                .Include("~/scripts/Frontend.js"));
+                .Include("~/scripts/Frontend.js")
+                .Include("~/scripts/googleanalytics.js"));              
+
         }
     }
 }
